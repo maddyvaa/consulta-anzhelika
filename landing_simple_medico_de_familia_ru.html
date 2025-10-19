@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Доктор Иван Петров — врач общей практики</title>
+  <meta name="description" content="Доктор Иван Петров — врач общей практики. Профилактика, диагностика и лечение. Онлайн‑запись, контакты и карта." />
+  <style>
+    :root{--bg:#0f172a;--primary:#2563eb;--muted:#64748b;--card:#ffffff;--accent:#10b981}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,'Noto Sans',sans-serif;line-height:1.55;color:#0b1220;background:linear-gradient(180deg,#f8fafc,#eef2ff)}
+    a{color:var(--primary);text-decoration:none}
+    .container{max-width:1080px;margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;background:rgba(255,255,255,.8);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid #e5e7eb;z-index:10}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;gap:10px;align-items:center}
+    .brand .logo{width:36px;height:36px;border-radius:10px;background:conic-gradient(from 0deg,var(--primary),#22d3ee,#60a5fa);display:grid;place-items:center;color:#fff;font-weight:700}
+    .brand h1{font-size:18px;margin:0}
+    .nav a.btn{padding:10px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:600}
+
+    .hero{padding:72px 0 32px}
+    .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:36px}
+    .hero h2{font-size:40px;line-height:1.15;margin:0 0 12px}
+    .hero p{color:var(--muted);margin:0 0 18px}
+
+    .card{background:var(--card);border:1px solid #e5e7eb;border-radius:18px;box-shadow:0 10px 30px rgba(2,6,23,.06)}
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#eff6ff;color:#1e40af;font-weight:600;font-size:12px;letter-spacing:.2px}
+    .kpis{display:flex;gap:16px;margin-top:16px;color:#0b1220}
+    .kpis .k{flex:1;padding:12px 14px;border-radius:12px;background:#f8fafc;border:1px dashed #e2e8f0;text-align:center}
+    .k .n{font-size:20px;font-weight:700}
+
+    .panel{padding:22px}
+    .btn{display:inline-grid;place-items:center;padding:12px 16px;border-radius:12px;border:0;background:var(--primary);color:#fff;font-weight:700;cursor:pointer}
+    .btn.alt{background:#0ea5e9}
+    .btn.big{padding:16px 20px;font-size:18px}
+
+    section{padding:40px 0}
+    h3.sec{font-size:26px;margin:0 0 12px}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .service{padding:16px}
+    .service h4{margin:8px 0 6px}
+    .service p{margin:0;color:var(--muted)}
+
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .about .photo{border-radius:18px;overflow:hidden;height:100%;min-height:280px;background:linear-gradient(135deg,#e2e8f0,#c7d2fe)}
+    .about .text{padding:16px}
+
+    .contact{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+    .card.list{padding:14px}
+    .list .row{display:flex;gap:12px;align-items:flex-start;padding:10px 8px;border-radius:12px}
+    .row svg{width:20px;height:20px;flex:0 0 20px}
+
+    .guide{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:14px}
+    .step{padding:14px;border:1px dashed #e2e8f0;border-radius:14px;background:#f8fafc}
+    .step img,.step svg{width:100%;height:140px;border-radius:12px;object-fit:cover;background:#e2e8f0}
+
+    .muted{color:var(--muted)}
+    footer{padding:28px 0;color:#475569}
+    .foot{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;border-top:1px solid #e5e7eb;padding-top:16px}
+    .map{width:100%;height:260px;border:0;border-radius:14px}
+
+    /* Breakpoint tablet/phone */
+    @media (max-width:980px){
+      .hero .wrap,.grid,.about,.contact,.guide{grid-template-columns:1fr}
+      .hero h2{font-size:32px}
+      .nav a.btn{padding:10px 12px}
+    }
+
+    /* Breakpoint móvil pequeño */
+    @media (max-width:600px){
+      .container{padding:0 14px}
+      header .nav{padding:10px 0}
+      .brand h1{font-size:16px}
+      .hero{padding:56px 0 24px}
+      .hero h2{font-size:26px}
+      p,li{font-size:15px}
+      .btn{padding:10px 14px}
+      .btn.big{padding:12px 16px;font-size:16px}
+      .panel{padding:16px}
+      h3.sec{font-size:22px}
+      .map{height:200px}
+      .kpis .k{padding:10px}
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Physician",
+    "name":"Доктор Иван Петров",
+    "medicalSpecialty":"GeneralPractice",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Улица Пример, 123",
+      "addressLocality":"Валенсия",
+      "addressCountry":"ES"
+    },
+    "telephone":"+34 631 003 813",
+    "openingHours":"Mo-Fr 09:00-18:00",
+    "url":"https://example.com"
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">МД</div>
+        <h1>Доктор Иван Петров · врач общей практики</h1>
+      </div>
+      <a class="btn" href="#booking">Онлайн‑запись</a>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="container wrap">
+        <div>
+          <span class="badge">Личная медицина рядом с вами</span>
+          <h2>Профилактика, диагностика и лечение для всей семьи</h2>
+          <p>Приём взрослых и детей. Без очередей, с вниманием к деталям и ясными рекомендациями. Возможна телемедицина.</p>
+          <div class="kpis">
+            <div class="k"><div class="n">10+ лет</div><div class="t">клинического опыта</div></div>
+            <div class="k"><div class="n">24–48 ч</div><div class="t">срок записи</div></div>
+            <div class="k"><div class="n">RU · ES · EN</div><div class="t">языки приёма</div></div>
+          </div>
+        </div>
+        <div class="card panel">
+          <h3 style="margin:0 0 10px">Онлайн‑запись</h3>
+          <p class="muted" style="margin:0 0 12px">Запись осуществляется через внешний сервис. Нажмите кнопку ниже — вы перейдёте к разделу <strong>Онлайн‑запись</strong> на этой странице.</p>
+          <a class="btn big" href="#booking">Онлайн‑запись</a>
+          <small class="muted" style="display:block;margin-top:10px">Прокрутка вниз к разделу записи.</small>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <h3 class="sec">Услуги</h3>
+        <div class="grid">
+          <div class="card service"><h4>Профилактика и скрининг</h4><p>Годовые осмотры, контроль давления и холестерина, вакцинация, рекомендации по образу жизни.</p></div>
+          <div class="card service"><h4>Острые состояния</h4><p>ОРВИ и грипп, боли в горле, ушах, животе, инфекции мочевыводящих путей.</p></div>
+          <div class="card service"><h4>Хронические заболевания</h4><p>Сопровождение при гипертонии, диабете 2 типа, астме, заболеваниях щитовидной железы.</p></div>
+          <div class="card service"><h4>Детское здоровье</h4><p>Консультации по росту и развитию, вакцинация, справки в школу и секции.</p></div>
+          <div class="card service"><h4>Анализы и интерпретация</h4><p>Назначение обследований, разбор результатов с понятным планом действий.</p></div>
+          <div class="card service"><h4>Телемедицина</h4><p>Онлайн-консультации для повторных вопросов, продление рецептов, контроль терапии.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about">
+        <div class="photo" aria-hidden="true"></div>
+        <div class="card text">
+          <h3 class="sec">О докторе</h3>
+          <p>Здравствуйте! Я — <strong>Иван Петров</strong>, врач общей практики. Окончил медицинский университет, прошёл ординатуру по семейной медицине и работаю в амбулаторном звене более 10 лет. Моя цель — помочь вам принимать осознанные решения о здоровье и избегать лишних назначений.</p>
+          <ul>
+            <li>Член Европейской ассоциации врачей общей практики (WONCA).</li>
+            <li>Регулярное повышение квалификации (профилактика сердечно‑сосудистых заболеваний, диабет, доказательная медицина).</li>
+            <li>Приём на русском, испанском и английском языках.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact">
+        <div class="card panel">
+          <h3 class="sec">Контакты и время работы</h3>
+          <div class="list">
+            <div class="row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.11 4.18 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.72c.12.9.3 1.77.54 2.61a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.47-1.09a2 2 0 0 1 2.11-.45c.84.24 1.71.42 2.61.54A2 2 0 0 1 22 16.92z"/></svg>
+              <div>
+                <div><strong>Тел:</strong> <a href="tel:+34631003813">+34 631 003 813</a></div>
+                <div style="margin-top:6px"><a class="btn alt" href="https://wa.me/34631003813">WhatsApp</a> <a class="btn" style="margin-left:8px;background:#2ea6de" href="https://t.me/username">Telegram</a></div>
+              </div>
+            </div>
+            <div class="row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+              <div>
+                <div><strong>E‑mail:</strong> <a href="mailto:clinic@example.com">clinic@example.com</a></div>
+                <div class="muted">Ответ в течение рабочего дня</div>
+              </div>
+            </div>
+            <div class="row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <div>
+                <div><strong>Часы приёма:</strong> Пн–Пт 09:00–18:00, Сб 10:00–14:00</div>
+                <div class="muted">По предварительной записи</div>
+              </div>
+            </div>
+            <div class="row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div>
+                <div><strong>Адрес:</strong> Улица Пример, 123 · Валенсия</div>
+                <div class="muted">Рядом с остановкой метро «Пример»</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card panel">
+          <iframe class="map" loading="lazy" src="https://www.google.com/maps?q=Valencia&output=embed" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="booking">
+      <div class="container">
+        <div class="card panel">
+          <h3 class="sec">Онлайн‑запись</h3>
+          <p>Для записи на приём перейдите по ссылке ниже. Откроется официальный календарь: <em>Jaimei · Cita Previa</em>.</p>
+          <p>
+            <a class="btn big" href="https://www.jaimei.es/cita-previa/" target="_blank" rel="noopener">Открыть страницу записи (новое окно)</a>
+          </p>
+          <p class="muted">Если страница открылась на испанском, воспользуйтесь короткой инструкцией ниже.</p>
+          <h4 style="margin:18px 0 8px">Короткая инструкция (с картинками)</h4>
+          <div class="guide">
+            <div class="step">
+              <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="200" height="120" fill="#dbeafe"/><rect x="12" y="14" width="176" height="24" rx="6" fill="#60a5fa"/><rect x="12" y="50" width="120" height="16" rx="4" fill="#bfdbfe"/><rect x="12" y="72" width="160" height="16" rx="4" fill="#bfdbfe"/><circle cx="170" cy="58" r="10" fill="#2563eb"/></svg>
+              <p><strong>Шаг 1.</strong> Нажмите «Cita Previa». Если есть выбор специализации — выберите <em>Medicina General</em>.</p>
+            </div>
+            <div class="step">
+              <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="200" height="120" fill="#dcfce7"/><rect x="20" y="18" width="60" height="20" rx="4" fill="#86efac"/><rect x="20" y="46" width="160" height="12" rx="4" fill="#bbf7d0"/><rect x="20" y="64" width="160" height="12" rx="4" fill="#bbf7d0"/><rect x="20" y="82" width="120" height="12" rx="4" fill="#bbf7d0"/></svg>
+              <p><strong>Шаг 2.</strong> Выберите удобную дату и время в календаре. Нажмите «Confirmar».</p>
+            </div>
+            <div class="step">
+              <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="200" height="120" fill="#fde68a"/><rect x="20" y="18" width="160" height="18" rx="4" fill="#fcd34d"/><rect x="20" y="44" width="120" height="14" rx="4" fill="#facc15"/><rect x="20" y="64" width="160" height="14" rx="4" fill="#facc15"/><circle cx="172" cy="26" r="8" fill="#f59e0b"/></svg>
+              <p><strong>Шаг 3.</strong> Заполните контактные данные (имя, телефон). Подтвердите запись. Вы получите подтверждение на экране и/или по телефону.</p>
+            </div>
+          </div>
+          <p class="muted" style="margin-top:10px">Подсказка: если сайт предложит выбрать язык, можно оставить испанский — названия кнопок понятны по контексту.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer>
+    <div class="container foot">
+      <small>© <span id="y"></span> Доктор Иван Петров. Все права защищены.</small>
+      <small>Политика конфиденциальности · Эта страница не собирает cookies.</small>
+    </div>
+  </footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
